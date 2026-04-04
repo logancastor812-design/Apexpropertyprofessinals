@@ -1,0 +1,36 @@
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+
+exports.handler = async (event) => {
+  if (event.httpMethod !== "POST") {
+    return { statusCode: 405, body: "Method Not Allowed" };
+  }
+
+  try {
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
+      line_items: [{
+        price_data: {
+          currency: 'usd',
+          product_data: { name: 'Apartment Application Fee' },
+          unit_amount: 5000, // $50.00 in cents
+        },
+        quantity: 1,
+      }],
+      mode: 'payment',
+      // Update these to your actual Netlify URL once deployed
+      success_url: 'https://apex-property-professionals.netlify.app/success',
+      cancel_url: 'https://apex-property-professionals.netlify.app/',
+    });
+
+    return {
+      statusCode: 303,
+      headers: { Location: session.url },
+      body: '',
+    };
+  } catch (error) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: error.message }),
+    };
+  }
+};
