@@ -1,1 +1,8 @@
-{"name": "apexpropertyprofessionals","version": "1.0.0","description": "Apex Property Professionals - Apartment Rental Application","main": "index.js","scripts": {"start": "node index.js"},"dependencies": {"express": "^4.17.1","stripe": "^12.0.0","mongoose": "^7.0.0","cors": "^2.8.5","dotenv": "^10.0.0","helmet": "^4.6.0","express-validator": "^6.12.0"}}
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
