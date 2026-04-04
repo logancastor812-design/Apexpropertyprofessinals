@@ -1,16 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apex Property Professionals</title>
-    <style>
-        body { font-family: Arial; text-align: center; padding: 2rem; }
-        h1 { color: #667eea; }
-        a { background: #667eea; color: white; padding: 1rem 2rem; text-decoration: none; border-radius: 5px; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Apex Property Professionals</h1>
-    <p>Welcome! Find your perfect apartment today.</p>
-    <a href="/apply">Apply Now</a>
+    <header>
+        <h1>Apex Property Professionals</h1>
+        <p>Your trusted partner in real estate.</p>
+    </header>
+    <main>
+        <section class="cta-section">
+            <h2>Apartment Application</h2>
+            <p>Ready to apply? There is a $50.00 non-refundable application fee.</p>
+            <form action="/.netlify/functions/create-checkout" method="POST">
+                <button type="submit" class="btn-apply">Apply & Pay Fee Now</button>
+            </form>
+        </section>
+        
+        <section>
+            <h2>Our Services</h2>
+            <ul>
+                <li>Property Management</li>
+                <li>Real Estate Consulting</li>
+                <li>Sales and Rentals</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Apex Property Professionals. All rights reserved.</p>
+    </footer>
 </body>
 </html>
