@@ -1,8 +1,11 @@
-[build]
-  publish = "public"
-  functions = "netlify/functions"
+{
+  "name": "apex-property-professionals",
+  "version": "1.0.0",
+  "description": "Property management and application portal",
+  "main": "index.js",
+  "dependencies": {
+    "stripe": "^14.0.0",
+    "dotenv": "^16.0.0"
+  }
+}
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
