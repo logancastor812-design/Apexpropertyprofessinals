@@ -3,34 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apex Property Professionals</title>
+    <title>Apex Property Professionals | Premier Management</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Apex Property Professionals</h1>
-        <p>Your trusted partner in real estate.</p>
+        <nav>
+            <div class="logo">APEX</div>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>Expert Property Management in Florida</h1>
+            <p>Seamless applications. Secure payments. Trusted service.</p>
+            <a href="#apply" class="btn-primary">Apply for an Apartment</a>
+        </div>
     </header>
+
     <main>
-        <section class="cta-section">
-            <h2>Apartment Application</h2>
-            <p>Ready to apply? There is a $50.00 non-refundable application fee.</p>
-            <form action="/.netlify/functions/create-checkout" method="POST">
-                <button type="submit" class="btn-apply">Apply & Pay Fee Now</button>
+        <section id="services" class="services">
+            <h2>Our Specialized Services</h2>
+            <div class="service-grid">
+                <div class="card">
+                    <h3>Property Management</h3>
+                    <p>Comprehensive oversight for landlords and tenants.</p>
+                </div>
+                <div class="card">
+                    <h3>Ethical Screening</h3>
+                    <p>Transparent and fair application processes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="apply" class="cta-banner">
+            <h2>Start Your Application Today</h2>
+            <p>A $50.00 non-refundable fee applies to all background screenings.</p>
+            <form action="/.netlify/functions/create-checkout" method="POST" data-netlify="false">
+                <button type="submit" class="btn-checkout">Pay Application Fee & Apply</button>
             </form>
         </section>
-        
-        <section>
-            <h2>Our Services</h2>
-            <ul>
-                <li>Property Management</li>
-                <li>Real Estate Consulting</li>
-                <li>Sales and Rentals</li>
-            </ul>
-        </section>
     </main>
+
     <footer>
-        <p>&copy; 2026 Apex Property Professionals. All rights reserved.</p>
+        <p>&copy; 2026 Apex Property Professionals. All Rights Reserved.</p>
+        <p>Email: info@apexpropertyprofessionals.com | Phone: (123) 456-7890</p>
     </footer>
 </body>
 </html>
